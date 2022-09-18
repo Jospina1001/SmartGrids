@@ -1,7 +1,13 @@
+/*
+ * Includes the following libraries:
+ * Adafruit BMP085
+ * Adafruit Unified Sensor
+ * Adafruit BusIO
+ */
 #include <DHT.h>
 #include <Wire.h>
 #include "WiFi.h"
-#include <Adafruit_BMP085.h>
+#include <Adafruit_BMP085.h>  
 
 Adafruit_BMP085 bmp;
 DHT dht(4, DHT11);
@@ -40,5 +46,5 @@ Serial.print("Presion = ");
 Serial.println(pres_b);
 Serial.print("Altitude = ");
 Serial.println(alt_b);
-delay(1000);
+delay(500);
 }
