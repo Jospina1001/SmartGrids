@@ -1,5 +1,6 @@
 #include <DHT.h>
 #include <Wire.h>
+#include "WiFi.h"
 #include <Adafruit_BMP085.h>
 
 Adafruit_BMP085 bmp;
@@ -7,6 +8,10 @@ DHT dht(4, DHT11);
 
 void setup() {
   Serial.begin(115200);
+
+  WiFi.mode(WIFI_STA);
+  Serial.println(WiFi.macAddress());
+  
   Serial.println(F("DHT11 test!"));
   
   dht.begin();

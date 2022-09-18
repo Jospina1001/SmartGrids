@@ -9,6 +9,7 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
 #include <utility/imumaths.h>
+#include "WiFi.h"
   
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
@@ -17,6 +18,10 @@ void setup(void)
   pinMode(4,INPUT);
   pinMode(23,OUTPUT);
   Serial.begin(9600);
+  
+  WiFi.mode(WIFI_STA);
+  Serial.println(WiFi.macAddress());
+  
   Serial.println("Orientation Sensor Test"); Serial.println("");
   
   /* Initialise the sensor */
