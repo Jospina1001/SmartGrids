@@ -4,6 +4,7 @@
  * Adafruit GFX Library
  * Adafruit BusIO
  */
+#include "WiFi.h"
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -54,6 +55,9 @@ void Nodo2(){
 void setup() {
    pinMode(4,INPUT);
    Serial.begin(9600);
+
+   WiFi.mode(WIFI_STA);
+   Serial.println(WiFi.macAddress());
    
   // put your setup code here, to run once:
   
