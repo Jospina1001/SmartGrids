@@ -28,23 +28,28 @@ void setup() {
 }
 
 void loop() {
+  
+  String hum="";
+  String tem="";
+  String pre="";
+  String alt="";
 
-float h = dht.readHumidity();
-float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  
+  float pres_b = bmp.readPressure();
+  float alt_b = bmp.readAltitude();
 
-float pres_b = bmp.readPressure();
-float alt_b = bmp.readAltitude();
+  hum="Humedad actual"+String(h);
+  tem="Temperatura actual" + String(t) +" C";
+  pre="Presion actual" + String(pres_b) +" hPa";
+  alt="Altitud actual" + String(alt_b) +" mts";
 
-Serial.print(F("Humedad: "));
-Serial.print(h);
-Serial.print(F("% \nTemperatura: "));
-Serial.print(t);
-Serial.println(F("°C "));
-
-
-Serial.print("Presion = ");
-Serial.println(pres_b);
-Serial.print("Altitude = ");
-Serial.println(alt_b);
-delay(500);
+  Serial.println(hum);
+  Serial.println(tem);
+  Serial.println(pre);
+  Serial.println(alt);
+  
+  Serial.println("");
+  delay(500);
 }
