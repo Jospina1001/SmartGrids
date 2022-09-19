@@ -80,19 +80,17 @@ void Nodo1() {
 void Nodo2(){
   
   oled.setCursor(0, 10);       // set position to display
-  oled.println("b"); // set text 
+  oled.println("Humedad: "+String(boardsStruct[1].dato1)); // set text 
 
   oled.setCursor(0, 20);       // set position to display
-  oled.println("b"); // set text  
+  oled.println("Temperatura: " +String(boardsStruct[1].dato2)+" C"); // set text  
 
   oled.setCursor(0, 30);       // set position to display
-  oled.println("b"); // set text 
+  oled.println("Presion: "+String(boardsStruct[1].dato3) +" hPa"); // set text 
 
   oled.setCursor(0, 40);       // set position to display
-  oled.println("b"); // set text
+  oled.println("Altitud: "+String(boardsStruct[1].dato4) + " mts"); // set text
 
-  oled.setCursor(0, 50);       // set position to display
-  oled.println("b"); // set text
 }
 
 void setup() {
